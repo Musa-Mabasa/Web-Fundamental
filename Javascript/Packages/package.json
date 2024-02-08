@@ -1,0 +1,21 @@
+{
+  "name": "packages",
+  "version": "1.0.0",
+  "description": "Working with packages",
+  "main": "packages.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Musa",
+  "license": "ISC",
+  "dependencies": {
+    "date-fns": "^3.3.1",
+    "is-prime": "^1.0.1"
+  },
+  "devDependencies": {
+    "webpack": "^5.90.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}

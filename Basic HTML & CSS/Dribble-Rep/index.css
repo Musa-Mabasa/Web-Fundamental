@@ -1,0 +1,32 @@
+body{
+    margin: 0px;
+    padding: 100px;
+    background-color: black;
+}
+
+.card{
+    height: 500px;
+    width: 360px;
+    border: solid;
+    border-color: gray;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+img{
+    width: 100%;
+}
+
+.card-details{
+    padding: 20px;
+}
+
+h2{
+    color: white;
+
+}
+
+p{
+    color: white;
+    font-weight: 200;
+}

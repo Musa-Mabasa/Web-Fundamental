@@ -1,0 +1,15 @@
+#a{
+    background-color: blue;
+    width: fit-content;
+}
+
+#b{
+    background-color: green;
+    width: fit-content;
+}
+
+#c{
+    position: relative;
+    background-color: red;
+    width: fit-content;
+}
