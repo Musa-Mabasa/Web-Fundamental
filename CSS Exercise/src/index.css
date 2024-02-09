@@ -121,10 +121,24 @@ li a{
 
 .actions{
     display: flex;
-    justify-content: space-evenly;
+    justify-content:space-between;
     align-items: center;
     width: 200px;
-    height: 1.8rem;
+    height: 2rem;
+}
+
+.language-dd{
+    display: flex;
+    gap: 0.3rem;
+    cursor: pointer;
+}
+
+.flag{
+    background-image: url('../Assets/Images/united-kingdom.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 1.3rem;
+    height: 1.3rem;
 }
 
 #login-btn{
@@ -144,12 +158,12 @@ li a{
     width: 4.5rem;
     height: inherit;
     background-color: whitesmoke;
-	color: #2686cd;
+	color: #147bc6;
 	border: none;
 	padding: 0;
 	font: inherit;
     font-weight: 600;
 	cursor: pointer;
 	outline: inherit;
-    border-radius: 0.5rem;
+    border-radius: 0.3rem;
 }
