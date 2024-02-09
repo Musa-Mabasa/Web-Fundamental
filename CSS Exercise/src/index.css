@@ -38,7 +38,7 @@ body{
 .header{
     grid-area: header;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -116,5 +116,40 @@ ul{
 li a{
     text-decoration: none;
     color: whitesmoke;
-    font-weight: 500;
+    font-weight: 600;
+}
+
+.actions{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 200px;
+    height: 1.8rem;
+}
+
+#login-btn{
+    width: 4.5rem;
+    height: inherit;
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+    font-weight: 600;
+	cursor: pointer;
+	outline: inherit;
+}
+
+#signUp-btn{
+    width: 4.5rem;
+    height: inherit;
+    background-color: whitesmoke;
+	color: #2686cd;
+	border: none;
+	padding: 0;
+	font: inherit;
+    font-weight: 600;
+	cursor: pointer;
+	outline: inherit;
+    border-radius: 0.5rem;
 }
