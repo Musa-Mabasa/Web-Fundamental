@@ -40,6 +40,8 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    font-weight: 600;
+    font-size: 1.2rem;
 
     nav{
         width: fit-content;
@@ -55,7 +57,6 @@ body{
     li a{
         text-decoration: none;
         color: whitesmoke;
-        font-weight: 600;
     }
 }
 
@@ -164,6 +165,7 @@ span{
 	padding: 0;
 	font: inherit;
     font-weight: 600;
+    font-size: 1rem;
 	cursor: pointer;
 	outline: inherit;
     border-radius: 0.3rem;
@@ -193,7 +195,7 @@ span{
     left: 6rem;
     z-index: 1;
     background-color: #ffffff;
-    box-shadow: -10px 10px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: -10px 10px 10rem rgba(0, 0, 0, 0.2);
     border-radius: 15px;
 
     nav{
