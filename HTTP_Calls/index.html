@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        fetch('https://ergast.com/api/f1/2021/22/results.json')
+        .then(response => response.json())
+        .then(responseJson => {
+            console.log(responseJson)
+            if(!(
+                    responseJson?.MRData?.RaceTable?.Races?.[0]?.Results &&
+                    responseJson?.MRData?.RaceTable?.Races?.[0]?.raceName &&
+                    responseJson?.MRData?.RaceTable?.Races?.[0]?.date
+                )
+              ){
+                 throw new Error('We have an error');
+            }
+
+            const body = document.querySelector('body');
+            body.style.fontFamily = 'sans-serif';
+            const header = document.createElement('h1');
+            let raceTitle = `${responseJson?.MRData?.RaceTable?.Races?.[0]?.raceName} • ${responseJson?.MRData?.RaceTable?.Races?.[0]?.date}`;
+            header.innerText = raceTitle;
+            body.append(header);
+
+            const results = responseJson?.MRData?.RaceTable?.Races?.[0]?.Results;
+
+            console.log(results);
+
+            // Lewis Hamilton(44) - Mercedes - Time (1:20:23:234) - Fastest lap (1:30:54) - Avg speed (230kph)
+
+            const driverList = document.createElement('ol');
+
+            for(let result of results){
+                let driverInfo = ''
+                if(result?.Driver?.familyName && result?.Driver?.givenName && result?.Driver?.permanentNumber){
+                    driverInfo += `${result?.Driver?.givenName} ${result?.Driver?.familyName}(${result?.Driver?.permanentNumber}) - `;
+                }
+
+                if(result?.Constructer?.name){
+                    driverInfo += `${result?.Constructer?.name} - `;
+                }
+
+                if(result?.Time?.time){
+                    driverInfo += `Time (${result?.Time?.time}) - `
+                }
+
+                if(result?.FastestLap?.Time?.time){
+                    driverInfo += `Fastest lap (${result?.FastestLap?.Time?.time}) - `
+                }
+
+                if(result?.FastestLap?.AverageSpeed?.units && result?.FastestLap?.AverageSpeed?.speed){
+                    driverInfo += `Avg speed (${result?.FastestLap?.AverageSpeed?.speed}${result?.FastestLap?.AverageSpeed?.units})`
+                }
+
+                const driverItem = document.createElement('li');
+                driverItem.innerText = driverInfo;
+                driverList.appendChild(driverItem);
+            }
+
+            body.appendChild(driverList);
+
+        })
+        .catch(error => console.error(error))
+        .finally(() => console.log("Fetch completed"))
+    </script>
+</body>
+</html>
