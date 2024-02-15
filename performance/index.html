@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("start")
+
+        fetch('https://ergast.com/api/f1/2021/22/results.json')
+        .then(response => response.json())
+        .then(responseJson => {
+            const now = new Date();
+            const t = new Date();
+
+            target.setSeconds(now.getSeconds() + 1);
+            while(now < target){
+                now = new Date();
+            }
+        } )
+
+        console.log('end')
+        
+        .catch(err => console.error(err))
+        .finally(console.log("done"))
+    </script>
+</body>
+</html>
